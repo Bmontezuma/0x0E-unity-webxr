@@ -1,0 +1,36 @@
+# Unity line endings
+* text=auto
+
+# Handle Unity .meta files correctly (Unity expects them to be treated as binary)
+*.meta binary
+
+# Treat all Unity asset files as binary
+*.unity binary
+*.prefab binary
+*.mat binary
+*.fbx binary
+*.asset binary
+*.tga binary
+*.png binary
+*.jpg binary
+*.psd binary
+*.dds binary
+*.svg binary
+*.mp4 binary
+*.wav binary
+*.ogg binary
+*.ttf binary
+*.otf binary
+
+# Ensure correct handling of .cs and other text files
+*.cs text
+*.shader text
+*.cginc text
+*.hlsl text
+*.xml text
+*.json text
+*.txt text
+*.md text
+
+# Handle large files with Unity tools or textures
+Library/PackageCache/* export-ignore
