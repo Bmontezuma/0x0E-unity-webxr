@@ -91,3 +91,6 @@ Build/
 Builds/
 Assets/StreamingAssets/
 UserSettings/
+
+*.obj
+Assets/Models/future-space-bowling-bar/source/*.obj
