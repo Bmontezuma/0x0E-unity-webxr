@@ -5,7 +5,6 @@
 # ***GitHub Pages For Project***
 [Check out my WebXR Bowling Game!](https://bmontezuma.github.io/0x0E-unity-webxr/)
 
-
 ## Overview
 
 The goal of this project is to develop an immersive bowling experience using WebXR technology. This experience should run in a VR headset browser but also provide fallback keyboard/mouse controls when viewed on a computer. The experience will be hosted on a web page, making it accessible to a larger audience without needing to download and install executable files.
