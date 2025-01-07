@@ -22,13 +22,40 @@
             text-align: center;
             background: #222;
             color: #aaa;
+            position: relative;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .placeholder img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* LED effect */
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(0, 255, 0, 1);
+            }
+        }
+
+        .placeholder h2 {
+            margin-top: 10px;
+            font-size: 1.5rem;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
     <h1>Currently Under Construction!</h1>
     <div class="placeholder">
-        GAME COMING SOON!
+        <img src="images/bowling-3427969_1280.png" alt="Game Coming Soon">
+        <h2>GAME COMING SOON!</h2>
     </div>
 </body>
 </html>
