@@ -57,5 +57,10 @@
         <img src="images/bowling-3427969_1280.png" alt="Game Coming Soon">
         <h2>GAME COMING SOON!</h2>
     </div>
+    <!-- Unity WebGL Loader -->
+    <script src="WebGL_Build/UnityLoader.js"></script>
+    <script>
+        var gameInstance = UnityLoader.instantiate("gameContainer", "WebGL_Build/WebGL_Build.json", {onProgress: UnityProgress});
+    </script>
 </body>
 </html>
