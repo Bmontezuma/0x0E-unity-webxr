@@ -24,9 +24,10 @@
       </div>
     </div>
     <script>
+      // Select the canvas element
       var canvas = document.querySelector("#unity-canvas");
 
-      // Show warning or error banners.
+      // Function to show warning or error banners
       function unityShowBanner(msg, type) {
         var warningBanner = document.querySelector("#unity-warning");
         function updateBannerVisibility() {
@@ -44,12 +45,13 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "Build"; // Path to the Build folder
-      var loaderUrl = buildUrl + "/WebGL_Build.loader.js"; // Unity's loader script
+      // Set the build folder path
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/WebGL_Build.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WebGL_Build.data", // Adjust to .br if Brotli is used
-        frameworkUrl: buildUrl + "/WebGL_Build.framework.js", // Adjust to .br if Brotli is used
-        codeUrl: buildUrl + "/WebGL_Build.wasm", // Adjust to .br if Brotli is used
+        dataUrl: buildUrl + "/WebGL_Build.data",
+        frameworkUrl: buildUrl + "/WebGL_Build.framework.js",
+        codeUrl: buildUrl + "/WebGL_Build.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Werewolfmoon",
         productName: "0x0E-unity-webxr",
@@ -57,8 +59,8 @@
         showBanner: unityShowBanner,
       };
 
+      // Adjust settings for mobile devices
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device adjustments
         var meta = document.createElement('meta');
         meta.name = 'viewport';
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
@@ -66,13 +68,15 @@
         document.querySelector("#unity-container").className = "unity-mobile";
         canvas.className = "unity-mobile";
       } else {
-        // Desktop adjustments
+        // Desktop settings
         canvas.style.width = "960px";
         canvas.style.height = "600px";
       }
 
+      // Show the loading bar while Unity loads
       document.querySelector("#unity-loading-bar").style.display = "block";
 
+      // Load Unity's loader script
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
