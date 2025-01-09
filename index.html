@@ -15,48 +15,50 @@
             height: 100vh;
             background: #111;
             color: #fff;
-        }
-        .placeholder {
-            border: 2px dashed #555;
-            padding: 20px;
-            text-align: center;
-            background: #222;
-            color: #aaa;
-            position: relative;
-            width: 80%;
-            max-width: 500px;
+            overflow: hidden; /* Prevent scrollbars */
         }
 
-        .placeholder img {
+        /* LED Glow Effect */
+        .glowing-background {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* LED effect */
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 255, 0, 0.5), rgba(0, 0, 255, 0.5), rgba(255, 0, 255, 0.5));
             animation: glow 1.5s infinite alternate;
+            z-index: -1; /* Make sure it stays behind the game */
         }
 
         @keyframes glow {
             0% {
-                box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+                box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 0, 255, 0.5), 0 0 60px rgba(255, 0, 255, 0.5);
             }
             100% {
-                box-shadow: 0 0 20px rgba(0, 255, 0, 1);
+                box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 60px rgba(0, 0, 255, 1), 0 0 80px rgba(255, 0, 255, 1);
             }
         }
 
-        .placeholder h2 {
-            margin-top: 10px;
-            font-size: 1.5rem;
-            color: #aaa;
+        /* Unity Game Container */
+        #gameContainer {
+            width: 80%;
+            height: 80%;
+            max-width: 800px;
+            max-height: 600px;
+            background: #222;
+            border: 2px solid #555;
         }
     </style>
 </head>
 <body>
-    <h1>Currently Under Construction!</h1>
-    <div class="placeholder">
-        <img src="images/bowling-3427969_1280.png" alt="Game Coming Soon">
-        <h2>GAME COMING SOON!</h2>
-    </div>
+    <h1>Bowling Game!</h1>
+
+    <!-- Glowing Background -->
+    <div class="glowing-background"></div>
+
+    <!-- Unity WebGL Game Container -->
+    <div id="gameContainer"></div>
+
     <!-- Unity WebGL Loader -->
     <script src="WebGL_Build/UnityLoader.js"></script>
     <script>
