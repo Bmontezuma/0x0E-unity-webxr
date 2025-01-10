@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <title>Bowling Game with LED Background</title>
   <style>
-    /* Reset default margins/padding */
+    /* default margins/padding */
     html, body {
       margin: 0;
       padding: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden; /* Hide scrollbars if the content overflows */
+      overflow: hidden; /* Hide scrollbars if content overflows */
       font-family: Arial, sans-serif;
       background: #111;
       color: #fff;
     }
 
-    /* LED/Neon multicolor background behind the container */
+    /* LED/Neon multicolor background behind container */
     .led-background {
       position: absolute;
       top: 0; 
@@ -37,7 +37,7 @@
       animation: neonGlow 10s ease-in-out infinite;
     }
 
-    /* Animation to shift the gradient, creating a continuous color cycle */
+    /* Animation gradient, creating continuous color cycle */
     @keyframes neonGlow {
       0% {
         background-position: 0% 50%;
@@ -50,17 +50,17 @@
       }
     }
 
-    /* The Unity WebGL game container */
+    /* Unity WebGL container */
     #gameContainer {
       position: relative;
       width: 80%;
       height: 80%;
-      max-width: 800px;    /* Adjust to taste */
-      max-height: 600px;   /* Adjust to taste */
-      margin: 40px auto;   /* Center horizontally + some top margin */
+      max-width: 800px;    /* Adjust Here */
+      max-height: 600px;   /* Adjust Here */
+      margin: 40px auto;   /* Center horizontally + top margin */
       background-color: #222;
       border: 2px solid #555;
-      box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Subtle neon glow */
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* neon glow */
     }
   </style>
 </head>
@@ -69,10 +69,10 @@
   <!-- LED Background -->
   <div class="led-background"></div>
 
-  <!-- The Container for the Game -->
+  <!-- The Container Game -->
   <div id="gameContainer"></div>
   
-  <!-- Unity Loader Script (IMPORTANT: note the /Build/ part of the path) -->
+  <!-- Unity Loader Script  -->
   <script src="WebGL_Build/Build/WebGL_Build.loader.js"></script>
   <script>
     createUnityInstance(document.querySelector("#gameContainer"), {
@@ -80,12 +80,12 @@
       frameworkUrl: "WebGL_Build/Build/WebGL_Build.framework.js",
       codeUrl:      "WebGL_Build/Build/WebGL_Build.wasm",
       
-      // Info about your product
+      // Info about product
       companyName:   "WolfSpire Gaming Design",
       productName:   "Space Bowling!",
       productVersion:"1.0",
       
-      // If you have streaming assets, uncomment and adjust:
+      // streaming assets:
       // streamingAssetsUrl: "StreamingAssets", 
     }).then((unityInstance) => {
       console.log("Unity WebGL loaded successfully.");
