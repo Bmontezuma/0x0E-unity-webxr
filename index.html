@@ -16,7 +16,7 @@
       color: #fff;
     }
 
-    /* LED/Neon multicolor background behind container */
+    /* LED/Neon multicolor background behind container, I like this */
     .led-background {
       position: absolute;
       top: 0; 
@@ -37,7 +37,7 @@
       animation: neonGlow 10s ease-in-out infinite;
     }
 
-    /* Animation gradient, creating continuous color cycle */
+    /* Animation gradient, continuous color cycle */
     @keyframes neonGlow {
       0% {
         background-position: 0% 50%;
@@ -50,14 +50,14 @@
       }
     }
 
-    /* Unity WebGL container */
+    /* Unity WebGL container for project */
     #gameContainer {
       position: relative;
       width: 80%;
       height: 80%;
-      max-width: 800px;    /* Adjust Here */
-      max-height: 600px;   /* Adjust Here */
-      margin: 40px auto;   /* Center horizontally + top margin */
+      max-width: 800px;    /* Can adjust Container here */
+      max-height: 600px;   /* Can adjust Container here */
+      margin: 40px auto;   /* Center horizontally and top margin */
       background-color: #222;
       border: 2px solid #555;
       box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* neon glow */
@@ -69,7 +69,7 @@
   <!-- LED Background -->
   <div class="led-background"></div>
 
-  <!-- The Container Game -->
+  <!-- The Container for Game -->
   <div id="gameContainer"></div>
   
   <!-- Unity Loader Script  -->
@@ -80,12 +80,12 @@
       frameworkUrl: "WebGL_Build/Build/WebGL_Build.framework.js",
       codeUrl:      "WebGL_Build/Build/WebGL_Build.wasm",
       
-      // Info about product
+      // Info about product, made something up
       companyName:   "WolfSpire Gaming Design",
       productName:   "Space Bowling!",
       productVersion:"1.0",
       
-      // streaming assets:
+      // If used streaming assets:
       // streamingAssetsUrl: "StreamingAssets", 
     }).then((unityInstance) => {
       console.log("Unity WebGL loaded successfully.");
