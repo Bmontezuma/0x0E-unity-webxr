@@ -3,7 +3,7 @@
 # ***0x0E Unity WebXR Project***
 
 # ***GitHub Pages For Project***
-[Check out my WebXR Bowling Game!](https://bmontezuma.github.io/0x0E-unity-webxr/)
+
 
 ## Overview
 
