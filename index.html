@@ -60,7 +60,7 @@
       margin: 40px auto;   /* Center horizontally + some top margin */
       background-color: #222;
       border: 2px solid #555;
-      box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Subtle neon glow*/
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Subtle neon glow */
     }
   </style>
 </head>
@@ -69,21 +69,24 @@
   <!-- LED Background -->
   <div class="led-background"></div>
 
-  <!-- The Container for Game -->
+  <!-- The Container for the Game -->
   <div id="gameContainer"></div>
   
-  <!-- Unity Loader Script -->
-  <script src="WebGL_Build/WebGL_Build.loader.js"></script>
+  <!-- Unity Loader Script (IMPORTANT: note the /Build/ part of the path) -->
+  <script src="WebGL_Build/Build/WebGL_Build.loader.js"></script>
   <script>
-    // Use the exact filenames in your WebGL_Build folder
     createUnityInstance(document.querySelector("#gameContainer"), {
-      dataUrl: "WebGL_Build/WebGL_Build.data",
-      frameworkUrl: "WebGL_Build/WebGL_Build.framework.js",
-      codeUrl: "WebGL_Build/WebGL_Build.wasm",
-      //Set streamingAssetsUrl: "StreamingAssets",
-      companyName: "WolfSpire Gaming Design",
-      productName: "Space Bowling!",
-      productVersion: "1.0",
+      dataUrl:      "WebGL_Build/Build/WebGL_Build.data",
+      frameworkUrl: "WebGL_Build/Build/WebGL_Build.framework.js",
+      codeUrl:      "WebGL_Build/Build/WebGL_Build.wasm",
+      
+      // Info about your product
+      companyName:   "WolfSpire Gaming Design",
+      productName:   "Space Bowling!",
+      productVersion:"1.0",
+      
+      // If you have streaming assets, uncomment and adjust:
+      // streamingAssetsUrl: "StreamingAssets", 
     }).then((unityInstance) => {
       console.log("Unity WebGL loaded successfully.");
     }).catch((message) => {
