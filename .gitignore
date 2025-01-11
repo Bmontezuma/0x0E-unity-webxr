@@ -84,7 +84,6 @@ Library/PackageCache/com.unity.toolchain.win-x86_64-linux-x86_64/*
 Library/
 Temp/
 Obj/
-Build/
 Builds/
 Assets/StreamingAssets/
 UserSettings/
