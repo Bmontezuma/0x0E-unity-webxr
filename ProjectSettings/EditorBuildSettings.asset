@@ -12,7 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Bowling.unity
     guid: 173a6303282cc1a42b7dd36e93663f1f
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 38e8892310034db48a5baa9ca241aa89, type: 2}
     WebXR.Settings: {fileID: 11400000, guid: a4c458c0b5083734a846920af79b785d, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 3cc4e9ea9f1021d478aee2cb8e9cf925, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 64b3e55a3f628a74da1b0860554b88e4, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 965b4a5a878d504438d3791d7cc68d8f, type: 2}
