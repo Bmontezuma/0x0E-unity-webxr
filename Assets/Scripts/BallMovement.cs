@@ -3,10 +3,10 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     [Header("Physics Settings")]
-    public float throwForce = 30f;   // Force applied when throwing the ball
+    public float throwForce = 3500f; // Base throw force
 
     private Rigidbody rb;
-    private bool isGrabbed = false;  // Whether the ball is grabbed
+    private bool isGrabbed = false;
 
     void Start()
     {
@@ -24,7 +24,6 @@ public class BallMovement : MonoBehaviour
 
     private void FollowGrabber()
     {
-        // Follow the grabber (e.g., player hand or mouse position)
         Transform grabber = transform.parent;
         if (grabber != null)
         {
@@ -35,18 +34,22 @@ public class BallMovement : MonoBehaviour
 
     public void Grab(Transform grabber)
     {
-        // Attach the ball to the grabber (e.g., player's hand)
         isGrabbed = true;
         transform.SetParent(grabber);
         rb.isKinematic = true; // Disable physics while grabbed
+        rb.linearVelocity = Vector3.zero; // Reset velocity
+        rb.angularVelocity = Vector3.zero; // Reset spin
     }
 
     public void Release(Vector3 throwDirection)
     {
-        // Detach the ball and apply throw force
         isGrabbed = false;
         transform.SetParent(null);
         rb.isKinematic = false; // Enable physics
-        rb.AddForce(throwDirection * throwForce, ForceMode.Impulse); // Apply throw force
+
+        float scaledForce = throwForce / rb.mass; // Scale force by mass
+        rb.linearVelocity = throwDirection.normalized * scaledForce; // Apply throw velocity
+
+        Debug.Log($"Throw Direction: {throwDirection}, Scaled Force: {scaledForce}, Velocity: {rb.linearVelocity}");
     }
 }

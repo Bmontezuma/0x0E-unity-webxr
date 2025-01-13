@@ -16,6 +16,7 @@ public class BallPickup : MonoBehaviour
         // Grab the ball on Left Mouse Button
         if (Input.GetMouseButtonDown(0) && grabbedBall == null)
         {
+            // Raycast to grab the ball
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit, 100f))
             {
@@ -30,7 +31,10 @@ public class BallPickup : MonoBehaviour
         // Release the ball on Left Mouse Button release
         if (Input.GetMouseButtonUp(0) && grabbedBall != null)
         {
+            // Calculate throw direction (forward from the player)
             Vector3 throwDirection = transform.forward;
+
+            // Release the ball
             grabbedBall.GetComponent<BallMovement>().Release(throwDirection);
             grabbedBall = null; // Clear the reference
         }
@@ -38,7 +42,7 @@ public class BallPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // VR Grab logic when colliding with a ball
+        // VR: Grab the ball when the controller collides with it
         if (other.CompareTag("BowlingBall") && grabbedBall == null)
         {
             grabbedBall = other.gameObject;
@@ -48,12 +52,12 @@ public class BallPickup : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        // VR Release logic when the ball leaves the controller
+        // VR: Release the ball when the controller exits the ball
         if (other.CompareTag("BowlingBall") && grabbedBall != null)
         {
             Vector3 throwDirection = transform.forward;
             grabbedBall.GetComponent<BallMovement>().Release(throwDirection);
-            grabbedBall = null; // Clear the reference
+            grabbedBall = null;
         }
     }
 }
