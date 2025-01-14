@@ -11,7 +11,16 @@ public class SpeedBoost : MonoBehaviour
             Rigidbody ballRb = other.GetComponent<Rigidbody>();
             if (ballRb != null)
             {
-                ballRb.linearVelocity *= boostMultiplier;
+                // Apply minimum velocity boost
+                if (ballRb.linearVelocity.magnitude < 1f)
+                {
+                    ballRb.linearVelocity = ballRb.linearVelocity.normalized * boostMultiplier;
+                }
+                else
+                {
+                    ballRb.linearVelocity *= boostMultiplier;
+                }
+                Debug.Log($"Ball boosted. New velocity: {ballRb.linearVelocity}");
             }
         }
     }

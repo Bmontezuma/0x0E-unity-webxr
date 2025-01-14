@@ -8,6 +8,9 @@ TagManager:
   - pins
   - Pickup
   - BowlingBall
+  - BowlingPin
+  - Ground
+  - Lane
   layers:
   - Default
   - TransparentFX
