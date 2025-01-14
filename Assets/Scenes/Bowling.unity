@@ -981,8 +981,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f27cecce4958764fbc167b31a52a0a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  releaseVelocityMultiplier: 130
-  releaseAngularVelocityMultiplier: 50
+  releaseVelocityMultiplier: 200
+  releaseAngularVelocityMultiplier: 60
   mass: 7.26
   linearDamping: 0.1
   angularDamping: 0.2
@@ -1366,35 +1366,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1611361787474004, guid: ea7c0165e16afe349a301abf9c89f74d, type: 3}
   m_PrefabInstance: {fileID: 1813220104}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &632241806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 632241803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78ec2eecf641cfb4e9277580ebb2091a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabPoint: {fileID: 2080325212}
---- !u!114 &632241808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 632241803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9fea3791f5b90e4485abd7a99474028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 80
-  mouseSensitivity: 100
-  playerCamera: {fileID: 1813220107}
-  grabPoint: {fileID: 2080325212}
 --- !u!54 &632241809
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1445,6 +1416,35 @@ CapsuleCollider:
   m_Height: 50
   m_Direction: 1
   m_Center: {x: 0, y: -86, z: 0}
+--- !u!114 &632241811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632241803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9fea3791f5b90e4485abd7a99474028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 70
+  mouseSensitivity: 100
+  playerCamera: {fileID: 1813220107}
+  grabPoint: {fileID: 2080325212}
+--- !u!114 &632241813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632241803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ec2eecf641cfb4e9277580ebb2091a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabPoint: {fileID: 2080325212}
 --- !u!1001 &710828845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4692,16 +4692,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1611361787474004, guid: ea7c0165e16afe349a301abf9c89f74d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 632241806}
-    - targetCorrespondingSourceObject: {fileID: 1611361787474004, guid: ea7c0165e16afe349a301abf9c89f74d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 632241808}
-    - targetCorrespondingSourceObject: {fileID: 1611361787474004, guid: ea7c0165e16afe349a301abf9c89f74d, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 632241809}
     - targetCorrespondingSourceObject: {fileID: 1611361787474004, guid: ea7c0165e16afe349a301abf9c89f74d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 632241810}
+    - targetCorrespondingSourceObject: {fileID: 1611361787474004, guid: ea7c0165e16afe349a301abf9c89f74d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 632241811}
+    - targetCorrespondingSourceObject: {fileID: 1611361787474004, guid: ea7c0165e16afe349a301abf9c89f74d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 632241813}
     - targetCorrespondingSourceObject: {fileID: 1854678450583440, guid: ea7c0165e16afe349a301abf9c89f74d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1813220106}
@@ -5189,7 +5189,7 @@ Transform:
   m_GameObject: {fileID: 2080325211}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.85, y: 0, z: 5.75}
+  m_LocalPosition: {x: -0.85, y: 0, z: 11.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
